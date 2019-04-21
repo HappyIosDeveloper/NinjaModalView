@@ -7,4 +7,21 @@ I borrowd source file from [PaoloCuscela](https://github.com/PaoloCuscela/Cards)
 
 # Installation
 1. Copy Source.zip to you computer, exract it and add Source folder to your Project.
-2. 
+2. Now you just need to implement your detail controller header in 'cellForRowAt' like this:
+
+```
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell", for: indexPath)
+        if let cellView = cell.viewWithTag(1000) as? PageHeader { 
+            let cardContent = storyboard!.instantiateViewController(withIdentifier: "YourDetailViewController") as! YourDetailViewController // add any ViewController here
+            cellView.shouldPresent(cardContent, from: self, fullscreen: true)
+            cellView.backgroundImage = #imageLiteral(resourceName: "asian")
+            cellView.title = "title: \(indexPath.row)"
+            cellView.subtitle = "subtitle: \(indexPath.row)"
+            cellView.shadowOpacity = 0.3
+        } else {
+            cell.textLabel?.text = "PageHeader Not Found"
+        }
+        return cell
+    }
+    ```
