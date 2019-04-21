@@ -7,9 +7,13 @@ I borrowd source file from [PaoloCuscela](https://github.com/PaoloCuscela/Cards)
 
 # Installation
 1. Copy Source.zip to you computer, exract it and add Source folder to your Project.
-2. The harderst part is to customize PageHeader class to your desired tableView cell.
+2. Create a simple tableView in your project & set prototype cells to 1 on storyboard.
+3. set that prototype cell indentifire to "EmptyCell" like image below:
+![alt text](https://github.com/UzumakiAlfredo/NinjaModalView/blob/master/CustomCell.png?raw=true)
+
+4. The harderst part is to customize PageHeader class to your desired tableView cell.
         to do this, simply customize PageHeader class as you wish. this class is what you see on each tableView cell & the header of every detailed target cotroller you will push to.
-3. Now you just need to implement your detail controller header in 'cellForRowAt' like this:
+5. Now you just need to implement your detail controller header in 'cellForRowAt' like this:
 
 ```
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
