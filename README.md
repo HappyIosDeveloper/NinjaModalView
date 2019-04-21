@@ -7,7 +7,9 @@ I borrowd source file from [PaoloCuscela](https://github.com/PaoloCuscela/Cards)
 
 # Installation
 1. Copy Source.zip to you computer, exract it and add Source folder to your Project.
-2. Now you just need to implement your detail controller header in 'cellForRowAt' like this:
+2. The harderst part is to customize PageHeader class to your desired tableView cell.
+        to do this, simply customize PageHeader class as you wish. this class is what you see on each tableView cell & the header of every detailed target cotroller you will push to.
+3. Now you just need to implement your detail controller header in 'cellForRowAt' like this:
 
 ```
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
